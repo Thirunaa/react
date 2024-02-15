@@ -1,10 +1,11 @@
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("h1", { id: "heading" }, "This is React"),
-  React.createElement("p", { id: "para" }, "This is a paragraph1"),
-  React.createElement("p", { id: "para" }, "This is a paragraph2"),
-]);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// JSX
+const parent = React.createElement("div", { id: "parent" }, [
+  React.createElement("h1", { id: "heading", key: "0" }, "This is React!"),
+  React.createElement("p", { key: "1" }, "This is a paragraph3"),
+  React.createElement("p", { key: "2" }, "This is a paragraph4"),
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
