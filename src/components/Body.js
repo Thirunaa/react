@@ -7,21 +7,22 @@ const Body = () => {
   //let dataList = data;
   // Use state hook
   const [dataList, setDataList] = useState(data);
-
+  const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
     console.log("UseEffect called!");
-    fetchData();
+    //fetchData();
   }, []);
 
+  console.log("Body Rendered");
   // Fetch data from server
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    const dataFromApi = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&is-seo-homepage-enabled=true"
     );
-    console.log(data);
-  };
 
-  console.log("After useEffect in order");
+    const dataFromApiJson = await dataFromApi.json();
+    console.log(dataFromApiJson);
+  };
 
   return (
     <div>
@@ -34,6 +35,28 @@ const Body = () => {
           }}
         >
           Top restaurants
+        </button>
+      </div>
+
+      <div className="res-search">
+        <input
+          type="text"
+          placeholder="Search for restaurants"
+          value={searchTerm}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            //setDataList(data);
+            let dataListSearched = dataList.filter((res) =>
+              res.info.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setDataList(dataListSearched);
+          }}
+        >
+          Search
         </button>
       </div>
       <div className="res-container">
@@ -53,5 +76,4 @@ const Body = () => {
   );
 };
 
-console.log(<Body />);
 export default Body;
