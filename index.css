@@ -38,8 +38,20 @@
   font-size: 20px;
   margin: 10px;
   line-height: 5px;
+  background-color: beige;
 }
 
+.res-shimmer-card {
+  justify-content: center;
+  border: 1px solid black;
+  padding: 10px;
+  width: 350px;
+  height: 300px;
+  font-size: 20px;
+  margin: 10px;
+  line-height: 5px;
+  background-color: beige;
+}
 .res-logo {
   width: 100px;
   margin: 10px;
