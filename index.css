@@ -65,3 +65,68 @@
   background-color: white;
   cursor: pointer;
 }
+
+.top-res-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 16px;
+}
+
+.top-restaurant-card {
+  margin: 8px;
+  flex: 1 0 auto; /* Replace width with a percentage if needed */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.top-restaurant-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.top-restaurant-card h3 {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.top-restaurant-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.top-restaurant-card .rating {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.top-restaurant-card .delivery-time {
+  font-size: 12px;
+  color: #333;
+}
+
+.top-restaurant-card .cuisine {
+  font-size: 12px;
+  color: #999;
+}
+
+.top-restaurant-card .location {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.top-restaurant-card .offer {
+  background-color: #f2f2f2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 8px;
+}
