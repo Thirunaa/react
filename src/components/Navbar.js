@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 styleComp = { color: "grey" };
 const Navbar = () => {
   //let logginStatus = "Login";
@@ -8,11 +8,13 @@ const Navbar = () => {
   return (
     <div className="header">
       <div>
-        <img
-          className="logo"
-          src="https://img.freepik.com/free-vector/vintage-restaurant-menu_23-2147491098.jpg"
-          alt="logo"
-        />
+        <Link to="/">
+          <img
+            className="logo"
+            src="https://img.freepik.com/free-vector/vintage-restaurant-menu_23-2147491098.jpg"
+            alt="logo"
+          />
+        </Link>
       </div>
       <div className="nav-header">
         <ul>
@@ -23,7 +25,9 @@ const Navbar = () => {
             <h1>Offer</h1>
           </li>
           <li>
-            <h1>Help</h1>
+            <Link to="/help">
+              <h1>Help</h1>
+            </Link>
           </li>
           <li style={styleComp}>
             <button
@@ -39,7 +43,9 @@ const Navbar = () => {
             </button>
           </li>
           <li>
-            <h1>Cart</h1>
+            <Link to="/cart">
+              <h1>Cart</h1>
+            </Link>
           </li>
         </ul>
       </div>

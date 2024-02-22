@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import TopRestaurantCard from "./TopRestaurantCard";
+import { Link } from "react-router-dom";
 //import data from "../util/mockData";
 
 // Not using key <<< using array index as key <<<<<<<<<<<< unique key for each child in your list
@@ -138,15 +139,16 @@ const Body = () => {
         <h2>{body3Title + city}</h2>
         <div className="res-container">
           {filteredList.map((res) => (
-            <RestaurantCard
-              key={res.info.id}
-              resName={res.info.name}
-              rate={res.info.avgRating}
-              time={res.info.sla.deliveryTime}
-              place={res.info.areaName}
-              cusine={res.info.cuisines[0]}
-              img={res.info.cloudinaryImageId}
-            />
+            <Link to={"/restaurants/" + res.info.id} key={res.info.id}>
+              <RestaurantCard
+                resName={res.info.name}
+                rate={res.info.avgRating}
+                time={res.info.sla.deliveryTime}
+                place={res.info.areaName}
+                cusine={res.info.cuisines[0]}
+                img={res.info.cloudinaryImageId}
+              />
+            </Link>
           ))}
         </div>
       </div>
