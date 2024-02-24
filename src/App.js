@@ -8,6 +8,7 @@ import Help from "./components/Help";
 import Cart from "./components/Cart";
 import ErrorComponent from "./components/ErrorComponent";
 import Restaurant from "./components/Restaurant";
+import OurTeam from "./components/OurTeam";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Body /> },
       { path: "/help", element: <Help /> },
       { path: "/cart", element: <Cart /> },
+      { path: "/ourteam", element: <OurTeam /> },
       { path: "/restaurants/:restaurantId", element: <Restaurant /> },
     ],
     errorElement: <ErrorComponent />,

@@ -47,6 +47,11 @@ const Navbar = () => {
               <h1>Cart</h1>
             </Link>
           </li>
+          <li>
+            <Link to="/ourteam">
+              <h1>Our Team</h1>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
